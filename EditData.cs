@@ -62,7 +62,24 @@ namespace TrainOrgnz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            parent.SendDataToGrid(dataBox.Text);
+            ConnectDB cdb = new ConnectDB();
+            //OrgnzForm orf = new OrgnzForm();
+            
+
+            cdb.OleConn();
+            using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source = train.mdb"))
+            {
+            conn.Open();
+            OleDbCommand myOleDbCommand = conn.CreateCommand();
+                
+                myOleDbCommand.Parameters.AddWithValue("@id_track", comboBox3.SelectedIndex);
+                myOleDbCommand.Parameters.AddWithValue("@id", textBox1.Text);
+                myOleDbCommand.CommandText = "UPDATE route_train SET id_track =@id_track where id = @id";
+            myOleDbCommand.ExecuteNonQuery();
+            }
+                
+            MessageBox.Show("Запись добавлена");
+            this.Close();
         }
     }
 }

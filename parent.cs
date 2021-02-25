@@ -9,14 +9,16 @@ namespace TrainOrgnz
     class parent : OrgnzForm
     {
         public  OrgnzForm part; //родительская форма
+        public object[] data;
 
-        public void EditPart(OrgnzForm pr)
+        public void EditPart(OrgnzForm pr, object[] data_tt)
         {
-            this.part = pr;
+            part = pr;
+            data = data_tt;
         }
-        public void SendDataToGrid(params object[] data)
+        public void SendDataToGrid(params object[] data_tt)
         {
-            dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].SetValues(data);
+            dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].SetValues(data_tt);
             //Определяем индекс текущей строки, записываем в неё пришедшие значения 
         }
 

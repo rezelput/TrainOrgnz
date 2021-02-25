@@ -93,5 +93,13 @@ namespace TrainOrgnz
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditData edt = new EditData();
+            string n1 =  Convert.ToString(dataGridView1[0, e.RowIndex].Value);
+
+            edt.label7.Text = Convert.ToString(n1);
+        }
     }
 }
