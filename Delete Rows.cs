@@ -31,7 +31,7 @@ namespace TrainOrgnz
                     comm.Parameters.Add("@id_rt", SqlDbType.Int);
                     comm.Parameters["@id_rt"].Value = id_rt;
                 int UspeshnoeIzmenenie = comm.ExecuteNonQuery();
-                
+                    this.Close();
                 if (UspeshnoeIzmenenie != 0)
                 {
                     MessageBox.Show("Изменения внесены", "Изменение записи");
