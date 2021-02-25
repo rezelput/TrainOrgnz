@@ -54,6 +54,7 @@ namespace TrainOrgnz
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.route_trainTableAdapter = new TrainOrgnz.trainDataSetTableAdapters.route_trainTableAdapter();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сбросToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routetrainBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trainDataSet)).BeginInit();
@@ -221,7 +222,8 @@ namespace TrainOrgnz
             // 
             this.фильтрыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.наличиеБилетовToolStripMenuItem,
-            this.выбранныйМаршрутToolStripMenuItem});
+            this.выбранныйМаршрутToolStripMenuItem,
+            this.сбросToolStripMenuItem});
             this.фильтрыToolStripMenuItem.Name = "фильтрыToolStripMenuItem";
             this.фильтрыToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.фильтрыToolStripMenuItem.Text = "Фильтры";
@@ -231,12 +233,14 @@ namespace TrainOrgnz
             this.наличиеБилетовToolStripMenuItem.Name = "наличиеБилетовToolStripMenuItem";
             this.наличиеБилетовToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
             this.наличиеБилетовToolStripMenuItem.Text = "Свободные места";
+            this.наличиеБилетовToolStripMenuItem.Click += new System.EventHandler(this.наличиеБилетовToolStripMenuItem_Click);
             // 
             // выбранныйМаршрутToolStripMenuItem
             // 
             this.выбранныйМаршрутToolStripMenuItem.Name = "выбранныйМаршрутToolStripMenuItem";
             this.выбранныйМаршрутToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
             this.выбранныйМаршрутToolStripMenuItem.Text = "Выбранный маршрут";
+            this.выбранныйМаршрутToolStripMenuItem.Click += new System.EventHandler(this.выбранныйМаршрутToolStripMenuItem_Click);
             // 
             // закрытьToolStripMenuItem
             // 
@@ -255,6 +259,13 @@ namespace TrainOrgnz
             this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            // 
+            // сбросToolStripMenuItem
+            // 
+            this.сбросToolStripMenuItem.Name = "сбросToolStripMenuItem";
+            this.сбросToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.сбросToolStripMenuItem.Text = "Сброс";
+            this.сбросToolStripMenuItem.Click += new System.EventHandler(this.сбросToolStripMenuItem_Click);
             // 
             // OrgnzForm
             // 
@@ -303,6 +314,7 @@ namespace TrainOrgnz
         private System.Windows.Forms.DataGridViewTextBoxColumn stationstartDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stationendDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сбросToolStripMenuItem;
     }
 }
 

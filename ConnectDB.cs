@@ -10,6 +10,11 @@ namespace TrainOrgnz
      class ConnectDB : OrgnzForm
     {
         OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source = train.mdb");
+
+        public void OleConn()
+        {
+            using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source = train.mdb")) ;
+        }
         public void openConnection()
         {
             if (conn.State == System.Data.ConnectionState.Closed)

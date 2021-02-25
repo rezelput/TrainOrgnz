@@ -56,5 +56,10 @@ namespace TrainOrgnz
             DateTime date = DateTime.Parse(endDate.Text);
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

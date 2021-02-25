@@ -62,5 +62,36 @@ namespace TrainOrgnz
             drt.Show();
             
         }
+
+        private void наличиеБилетовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source = train.mdb"))
+            {
+            string FrSelect = @"select * from route_train where id_tckt = 1";
+            OleDbDataAdapter comm = new OleDbDataAdapter(FrSelect, conn);
+                DataTable dt = new DataTable();
+                comm.Fill(dt);
+                dataGridView1.DataSource = dt; //выводим в грид
+            }
+
+            
+        }
+
+        private void сбросToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source = train.mdb"))
+            {
+                string FrSelect = @"select * from route_train";
+                OleDbDataAdapter comm = new OleDbDataAdapter(FrSelect, conn);
+                DataTable dt = new DataTable();
+                comm.Fill(dt);
+                dataGridView1.DataSource = dt; //выводим в грид
+            }
+        }
+
+        private void выбранныйМаршрутToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
