@@ -1,0 +1,13 @@
+D:\GitHub\TrainOrgnz\TrainOrgnz\bin\Debug\train.mdb
+D:\GitHub\TrainOrgnz\TrainOrgnz\bin\Debug\TrainOrgnz.exe.config
+D:\GitHub\TrainOrgnz\TrainOrgnz\bin\Debug\TrainOrgnz.exe
+D:\GitHub\TrainOrgnz\TrainOrgnz\bin\Debug\TrainOrgnz.pdb
+D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.csprojAssemblyReference.cache
+D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.AddRouteTrain.resources
+D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.OrgnzForm.resources
+D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.Properties.Resources.resources
+D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.csproj.GenerateResource.cache
+D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.csproj.CoreCompileInputs.cache
+D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.exe
+D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.pdb
+D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.Delete_Rows.resources
