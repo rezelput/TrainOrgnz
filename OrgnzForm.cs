@@ -37,7 +37,8 @@ namespace TrainOrgnz
 
         private void редактироватьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            EditData ed = new EditData();
+            ed.Show();
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)

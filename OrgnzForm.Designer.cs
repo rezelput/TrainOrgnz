@@ -265,7 +265,7 @@ namespace TrainOrgnz
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "OrgnzForm";
-            this.Text = "Form1";
+            this.Text = "Органайзер - Движение поездов";
             this.Load += new System.EventHandler(this.OrgnzForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.routetrainBindingSource)).EndInit();
