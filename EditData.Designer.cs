@@ -33,7 +33,6 @@ namespace TrainOrgnz
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@ namespace TrainOrgnz
             this.trackTableAdapter = new TrainOrgnz.trainDataSetTableAdapters.trackTableAdapter();
             this.ticketBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ticketTableAdapter = new TrainOrgnz.trainDataSetTableAdapters.ticketTableAdapter();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trainDataSet)).BeginInit();
@@ -101,17 +101,6 @@ namespace TrainOrgnz
             this.comboBox6.Size = new System.Drawing.Size(152, 24);
             this.comboBox6.TabIndex = 7;
             this.comboBox6.ValueMember = "id";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DataSource = this.trackBindingSource;
-            this.comboBox3.DisplayMember = "name_track";
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(9, 215);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(152, 24);
-            this.comboBox3.TabIndex = 9;
-            this.comboBox3.ValueMember = "id";
             // 
             // label1
             // 
@@ -288,6 +277,17 @@ namespace TrainOrgnz
             // 
             this.ticketTableAdapter.ClearBeforeFill = true;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.trackBindingSource;
+            this.comboBox3.DisplayMember = "name_track";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(9, 215);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(152, 24);
+            this.comboBox3.TabIndex = 9;
+            this.comboBox3.ValueMember = "id";
+            // 
             // EditData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -324,7 +324,6 @@ namespace TrainOrgnz
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label5;
@@ -343,5 +342,6 @@ namespace TrainOrgnz
         private trainDataSetTableAdapters.trackTableAdapter trackTableAdapter;
         private System.Windows.Forms.BindingSource ticketBindingSource;
         private trainDataSetTableAdapters.ticketTableAdapter ticketTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

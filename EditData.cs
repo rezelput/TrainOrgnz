@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,11 @@ namespace TrainOrgnz
 {
     public partial class EditData : Form
     {
+
+
         public EditData()
         {
             InitializeComponent();
-
         }
 
         private void EditTrack_CheckedChanged(object sender, EventArgs e)
@@ -56,10 +58,11 @@ namespace TrainOrgnz
             DateTime date = DateTime.Parse(endDate.Text);
             
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            parent.SendDataToGrid(dataBox.Text);
         }
     }
 }
