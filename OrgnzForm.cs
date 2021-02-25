@@ -91,7 +91,8 @@ namespace TrainOrgnz
 
         private void выбранныйМаршрутToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Track tt = new Track();
+            tt.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

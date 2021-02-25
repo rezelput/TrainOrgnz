@@ -12,3 +12,4 @@ D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.exe
 D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.pdb
 D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.Delete_Rows.resources
 D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.EditData.resources
+D:\GitHub\TrainOrgnz\TrainOrgnz\obj\Debug\TrainOrgnz.Track.resources
