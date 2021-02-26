@@ -65,6 +65,7 @@ namespace TrainOrgnz
                         comm.Fill(dt);
                         dataGridView1.DataSource = dt; //выводим в грид
                     }
+                    MessageBox.Show("Данные выведены");
                 }
                 catch
                 {
@@ -74,7 +75,7 @@ namespace TrainOrgnz
 
             }
 
-            MessageBox.Show("Готово");
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
