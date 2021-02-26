@@ -20,6 +20,8 @@ namespace TrainOrgnz
 
         private void Track_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "trainDataSet.route_train". При необходимости она может быть перемещена или удалена.
+            this.route_trainTableAdapter.Fill(this.trainDataSet.route_train);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "trainDataSet.station". При необходимости она может быть перемещена или удалена.
             this.stationTableAdapter.Fill(this.trainDataSet.station);
 
@@ -29,19 +31,55 @@ namespace TrainOrgnz
         {
             using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source = train.mdb"))
             {
-                OrgnzForm ooo = new OrgnzForm();
-                conn.Open();
-                OleDbCommand myOleDbCommand = conn.CreateCommand();
-                OleDbParameter @station_start = new OleDbParameter("@station_start", OleDbType.Numeric);
-                @station_start.Value = this.comboBox1.SelectedValue;
-                myOleDbCommand.Parameters.Add(@station_start);
-                myOleDbCommand.CommandText = @"select * from route_train where [station_start] = @station_start";
-                OleDbDataAdapter comm = new OleDbDataAdapter(myOleDbCommand.CommandText, conn);
+                try
+                {
+                    if (comboBox1.SelectedItem != null)
+                    {
+                string FrSelect = @"select * from route_train where station_start =" + comboBox1.SelectedIndex + "and id_tckt = 1";
+                OleDbDataAdapter comm = new OleDbDataAdapter(FrSelect, conn);
                 DataTable dt = new DataTable();
                 comm.Fill(dt);
-                myOleDbCommand.ExecuteNonQuery();
-                ooo.dataGridView1.DataSource = dt; //выводим в грид
+                dataGridView1.DataSource = dt; //выводим в грид
+                }
+                if (comboBox2.SelectedItem != null)
+                {
+                    string FrSelect = @"select * from route_train where station_start =" + comboBox2.SelectedIndex + "";
+                    OleDbDataAdapter comm = new OleDbDataAdapter(FrSelect, conn);
+                    DataTable dt = new DataTable();
+                    comm.Fill(dt);
+                    dataGridView1.DataSource = dt; //выводим в грид
+                }
+                    if (dateTimePicker1.Value != null)
+                    {
+                        string FrSelect = @"select * from route_train where begin_date =" + dateTimePicker1 + "";
+                        OleDbDataAdapter comm = new OleDbDataAdapter(FrSelect, conn);
+                        DataTable dt = new DataTable();
+                        comm.Fill(dt);
+                        dataGridView1.DataSource = dt; //выводим в грид
+                    }
+                    if (dateTimePicker2.Value != null)
+                    {
+                        string FrSelect = @"select * from route_train where end_date =" + dateTimePicker2 + "";
+                        OleDbDataAdapter comm = new OleDbDataAdapter(FrSelect, conn);
+                        DataTable dt = new DataTable();
+                        comm.Fill(dt);
+                        dataGridView1.DataSource = dt; //выводим в грид
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Нет совпадений в данных");
+                }
+               
+
             }
+
+            MessageBox.Show("Готово");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
             this.Close();
         }
     }

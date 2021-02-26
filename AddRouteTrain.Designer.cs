@@ -31,13 +31,16 @@ namespace TrainOrgnz
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.trainBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trainDataSet = new TrainOrgnz.trainDataSet();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.typewagonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trainDataSet = new TrainOrgnz.trainDataSet();
-            this.trainBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.trackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.ticketBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -50,24 +53,23 @@ namespace TrainOrgnz
             this.stationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.trackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.trainTableAdapter = new TrainOrgnz.trainDataSetTableAdapters.trainTableAdapter();
             this.type_wagonTableAdapter = new TrainOrgnz.trainDataSetTableAdapters.type_wagonTableAdapter();
             this.trackTableAdapter = new TrainOrgnz.trainDataSetTableAdapters.trackTableAdapter();
             this.stationTableAdapter = new TrainOrgnz.trainDataSetTableAdapters.stationTableAdapter();
             this.ticketTableAdapter = new TrainOrgnz.trainDataSetTableAdapters.ticketTableAdapter();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.stationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.typewagonBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trainDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trainBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trainDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typewagonBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -82,6 +84,27 @@ namespace TrainOrgnz
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Данные поезда";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.trainBindingSource;
+            this.comboBox1.DisplayMember = "name_train";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(10, 62);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 4;
+            this.comboBox1.ValueMember = "id";
+            // 
+            // trainBindingSource
+            // 
+            this.trainBindingSource.DataMember = "train";
+            this.trainBindingSource.DataSource = this.trainDataSet;
+            // 
+            // trainDataSet
+            // 
+            this.trainDataSet.DataSetName = "trainDataSet";
+            this.trainDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -117,16 +140,6 @@ namespace TrainOrgnz
             this.typewagonBindingSource.DataMember = "type_wagon";
             this.typewagonBindingSource.DataSource = this.trainDataSet;
             // 
-            // trainDataSet
-            // 
-            this.trainDataSet.DataSetName = "trainDataSet";
-            this.trainDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // trainBindingSource
-            // 
-            this.trainBindingSource.DataMember = "train";
-            this.trainBindingSource.DataSource = this.trainDataSet;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.comboBox3);
@@ -140,6 +153,22 @@ namespace TrainOrgnz
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Данные о поездке";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.trackBindingSource;
+            this.comboBox3.DisplayMember = "name_track";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(13, 62);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 24);
+            this.comboBox3.TabIndex = 5;
+            this.comboBox3.ValueMember = "id";
+            // 
+            // trackBindingSource
+            // 
+            this.trackBindingSource.DataMember = "track";
+            this.trackBindingSource.DataSource = this.trainDataSet;
             // 
             // label6
             // 
@@ -217,7 +246,7 @@ namespace TrainOrgnz
             // 
             // comboBox5
             // 
-            this.comboBox5.DataSource = this.stationBindingSource;
+            this.comboBox5.DataSource = this.stationBindingSource1;
             this.comboBox5.DisplayMember = "station";
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(15, 150);
@@ -251,11 +280,6 @@ namespace TrainOrgnz
             this.label3.TabIndex = 1;
             this.label3.Text = "Направление";
             // 
-            // trackBindingSource
-            // 
-            this.trackBindingSource.DataMember = "track";
-            this.trackBindingSource.DataSource = this.trainDataSet;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(13, 398);
@@ -286,27 +310,10 @@ namespace TrainOrgnz
             // 
             this.ticketTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox1
+            // stationBindingSource1
             // 
-            this.comboBox1.DataSource = this.trainBindingSource;
-            this.comboBox1.DisplayMember = "name_train";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.ValueMember = "id";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DataSource = this.trackBindingSource;
-            this.comboBox3.DisplayMember = "name_track";
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(13, 62);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 5;
-            this.comboBox3.ValueMember = "id";
+            this.stationBindingSource1.DataMember = "station";
+            this.stationBindingSource1.DataSource = this.trainDataSet;
             // 
             // AddRouteTrain
             // 
@@ -321,16 +328,17 @@ namespace TrainOrgnz
             this.Load += new System.EventHandler(this.AddRouteTrain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.typewagonBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trainDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trainBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trainDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typewagonBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,5 +374,6 @@ namespace TrainOrgnz
         private trainDataSetTableAdapters.ticketTableAdapter ticketTableAdapter;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.BindingSource stationBindingSource1;
     }
 }
