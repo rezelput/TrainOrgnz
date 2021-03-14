@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework.Internal.Execution;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,21 @@ namespace TrainOrgnz
             ConnectDB condb = new ConnectDB();
             condb.OleConn();
 
+        }
+
+        internal object AddEventAsync(Event testEvent)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static object GetEventAsync(object id)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal object SaveChanges()
+        {
+            throw new NotImplementedException();
         }
     }
 }
